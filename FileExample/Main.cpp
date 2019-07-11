@@ -1,9 +1,10 @@
 //============================================================================
-// Name        : MyFirstCpp.cpp
+// Name        : Main.cpp
 // Author      :
 // Version     :
 // Copyright   : Your copyright notice
-// Description :
+// Description : This program creates a binary file and stores all the content of a custom object into it 
+// Then reads the file back and displays data in a table format
 //============================================================================
 #include <iostream>
 #include <fstream>
