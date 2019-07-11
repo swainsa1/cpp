@@ -1,74 +1,92 @@
 //============================================================================
 // Name        : MyFirstCpp.cpp
-// Author      : 
+// Author      :
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description :
 //============================================================================
-#include<iostream>
-#include<fstream>
-#include<vector>
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
 
 using namespace std;
-void createFile(ofstream file,vector<Person> personList );
-void readFile(string fileName);
-
-struct Person {
-	string name;
+struct Person
+{
+	char* name;
 	int age;
 	double height;
 };
-int main() {
+string fileName = "testFile.bin";
+void createFile();
+void readFile();
 
-	string fileName ="testFile.bin";
+int main()
+{
+	system("color F6");
 
-	vector<Person> personList(10);
-	
-	Person p1 = {"Santosh Swain",30,5.7};
-	Person p2 = {"Siyona Swain",7,3.7};
-	Person p3 = {"Samarth Swain",5,3.7};
-	Person p4 = {"Rojalin Swain",30,5.2};
-	Person p5 = {"Saroj Swain",25,5.4};
-	Person p6 = {"Suresh Swain",28,5.7};
-
-	personList.push_back(p1);
-	personList.push_back(p2);
-	personList.push_back(p3);
-	personList.push_back(p4);
-	personList.push_back(p5);
-	personList.push_back(p6);
-	
-	ofstream file ;
-
-
-   file.open(fileName,ios::binary);
-	if(file.is_open()){
-		createFile(file,personList);
-		
-	}
-
-	
-    
-    readFile("Test");
-
+	createFile();
+	readFile();
 
 	return 0;
 }
 
+void createFile()
+{
 
-void createFile(ofstream file,vector<Person> personList ){
+	Person p1 = {"Tom Hank", 61, 5.7};
+	Person p2 = {"Donald Trump", 68, 5.9};
+	Person p3 = {"Elizabeth Warren", 55, 6.1};
+	Person p4 = {"Jerry Sienfield", 63, 5.11};
+	Person p5 = {"Jared Kushner", 35, 5.9};
+	Person p6 = {"Bill Gates", 59, 6.2};
 
-   for (size_t i = 0; i < personList.size(); i++)
-   {
-	   file.write((char *)&personList[i],sizeof(Person));
-   }
-   
+	ofstream file;
+	file.open(fileName, ios::binary);
+	if (file.is_open())
+	{
 
+		file.write((char *)&p1, sizeof(Person));
+		file.write((char *)&p2, sizeof(Person));
+		file.write((char *)&p3, sizeof(Person));
+		file.write((char *)&p4, sizeof(Person));
+		file.write((char *)&p5, sizeof(Person));
+		file.write((char *)&p6, sizeof(Person));
+		file.close();
+	}
+	else
+	{
+		cout << "Unable to create file " << fileName << endl;
+	}
 }
 
-void readFile(string fileName){
+void readFile()
+{
 
-cout << " FileName:  " << fileName <<endl;
+	ifstream file;
+	file.open(fileName, ios::binary);
 
+	if (file.is_open())
+	{
+		Person p = {};
+		system("color FC");
+		printf("  %-30s", "---------------------------------------\n");
+		printf("| %-20s| %-5s| %-5s   |\n", "Name", "Age", "Height");
+		printf("  %-30s", "---------------------------------------\n");
+		printf(" %-30s", "---------------------------------------\n");
+	
 
+		while (file.read((char *)&p, sizeof(Person)))
+		{
+			
+			printf("| %-20s| %-5d| %-5f|\n", p.name, p.age, p.height);
+			printf(" %-30s", "---------------------------------------\n");
+
+		}
+
+		file.close();
+	}
+	else
+	{
+		cout << "Unable to open file " << fileName << endl;
+	}
 }

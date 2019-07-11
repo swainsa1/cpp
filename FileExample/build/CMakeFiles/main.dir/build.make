@@ -60,15 +60,15 @@ include CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Main.cpp.o: ../Main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/swainsa1/development/git/cpp/FileExample/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/Main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/Main.cpp.o -c /Users/swainsa1/development/git/cpp/FileExample/Main.cpp
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/Main.cpp.o -c /Users/swainsa1/development/git/cpp/FileExample/Main.cpp
 
 CMakeFiles/main.dir/Main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/swainsa1/development/git/cpp/FileExample/Main.cpp > CMakeFiles/main.dir/Main.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/swainsa1/development/git/cpp/FileExample/Main.cpp > CMakeFiles/main.dir/Main.cpp.i
 
 CMakeFiles/main.dir/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/swainsa1/development/git/cpp/FileExample/Main.cpp -o CMakeFiles/main.dir/Main.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/swainsa1/development/git/cpp/FileExample/Main.cpp -o CMakeFiles/main.dir/Main.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
