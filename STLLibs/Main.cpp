@@ -12,6 +12,9 @@
 #include <list>
 #include <map>
 #include <stdlib.h>
+#include <set>
+#include <stack>
+#include <queue>
 
 using namespace std;
 
@@ -30,15 +33,25 @@ public:
 		name = other.name;
 		age = other.age;
 	}
-
-	Person(string name, int age) : name(name), age(age)
+	bool operator<(const Person &other) const
 	{
+		return name < other.name;
 	}
 
-	void print (){
-		cout << " { \n \t\t\t Name : "+name +" , Age : " << age << " \n\t\t\t}"; 
+	Person(string name, int age) : name(name), age(age) {}
+
+	void print() const
+	{
+		cout << " { \n \t\t\t Name : " + name + " , Age : " << age << " \n\t\t\t}";
 	}
 
+	void printSimple() const
+	{
+		cout << "  Name : " + name + " , Age : " << age << " \n";
+	}
+
+	friend bool compByAge(const Person aPerson, Person anotherPerson);
+	friend bool compByAgeDesc(const Person aPerson, Person anotherPerson);
 };
 
 void printMap(map<int, Person> map);
@@ -50,15 +63,170 @@ void printList(list<int> list1);
 void addToList(list<int> list1, int value);
 list<int> removeFromeList(list<int> list1, int value);
 
+void setExample();
+
+void stackExample();
+
+void queueExample();
+
+void sortVector();
+
+void sortVectorByComparator();
+
 int main()
 {
 	matrixVector();
 	listExample();
 	mapExample();
-
+	setExample();
+	stackExample();
+	queueExample();
+	sortVector();
+	sortVectorByComparator();
 	return 0;
 }
 
+bool compByAge(const Person aPerson, Person anotherPerson)
+{
+	return aPerson.age < anotherPerson.age;
+}
+
+bool compByAgeDesc(const Person aPerson, Person anotherPerson)
+{
+	return aPerson.age > anotherPerson.age;
+}
+
+void sortVectorByComparator()
+{
+
+	cout << " ######################   Sort Vector  Example  Comparator ###################" << endl;
+
+	vector<Person> unsortedList;
+
+	unsortedList.push_back(Person("Zeeva	advani", 44));
+
+	unsortedList.push_back(Person("Zeeva	advani", 44));
+	unsortedList.push_back(Person("Minn Zero", 23));
+	unsortedList.push_back(Person("LK Mishra", 24));
+	unsortedList.push_back(Person("Anand	advani", 43));
+	unsortedList.push_back(Person("Jeevan Mihg", 55));
+	unsortedList.push_back(Person("Zeevan advani", 33));
+
+	//Print the unsorted list
+	cout << " Before Sorting " << endl;
+	for (int index = 0; index < unsortedList.size(); index++)
+	{
+		unsortedList[index].printSimple();
+	}
+
+	cout << " Sort by age " << endl;
+	sort(unsortedList.begin(), unsortedList.end(), compByAge);
+
+	cout << " After Sorting " << endl;
+	for (int index = 0; index < unsortedList.size(); index++)
+	{
+		unsortedList[index].printSimple();
+	}
+
+	cout << " Sort by age desc" << endl;
+	sort(unsortedList.begin(), unsortedList.end(), compByAgeDesc);
+
+	cout << " After Sorting " << endl;
+	for (int index = 0; index < unsortedList.size(); index++)
+	{
+		unsortedList[index].printSimple();
+	}
+
+
+}
+
+void sortVector()
+{
+	cout << " ######################   Sort Vector  Example ###################" << endl;
+
+	vector<Person> unsortedList;
+
+	unsortedList.push_back(Person("Zeeva	advani", 44));
+
+	unsortedList.push_back(Person("Zeeva	advani", 44));
+	unsortedList.push_back(Person("Minn Zero", 23));
+	unsortedList.push_back(Person("LK Mishra", 24));
+	unsortedList.push_back(Person("Anand	advani", 43));
+	unsortedList.push_back(Person("Jeevan Mihg", 55));
+	unsortedList.push_back(Person("Zeevan advani", 33));
+
+	//Print the unsorted list
+	cout << " Before Sorting " << endl;
+	for (int index = 0; index < unsortedList.size(); index++)
+	{
+		unsortedList[index].printSimple();
+	}
+
+	cout << " Sort by name " << endl;
+	sort(unsortedList.begin(), unsortedList.end());
+
+	cout << " After Sorting " << endl;
+	for (int index = 0; index < unsortedList.size(); index++)
+	{
+		unsortedList[index].printSimple();
+	}
+}
+
+void queueExample()
+{
+
+	cout << " ######################   Queue  Example ###################" << endl;
+	queue<Person> serviceQueue;
+	serviceQueue.push(Person("AAAA", 23)); //1st element
+	serviceQueue.push(Person("BBB", 43));  //2nd element
+	serviceQueue.push(Person("CCC", 56));  //3rd
+	serviceQueue.push(Person("DDDD", 67)); //4th
+	serviceQueue.push(Person("EEEE", 78)); //5th
+	Person front = serviceQueue.front(); //1st
+	cout << "front = " << flush;
+	front.printSimple(); //1st
+
+	Person back = serviceQueue.back(); //6thnd is at the front now
+	cout << "back = " << flush;
+	back.printSimple();
+
+	serviceQueue.pop(); // 1st is gone
+
+	front = serviceQueue.front(); //2nd is at the front now
+	cout << "front = " << flush;
+	front.printSimple();
+
+	serviceQueue.push(Person("1111111", 78)); //6th
+
+	cout << "back = " << flush;
+	back = serviceQueue.back(); //6thnd is at the front now
+
+	back.printSimple();
+}
+
+void stackExample()
+{
+
+	cout << " ######################   Stack  Example ###################" << endl;
+	stack<Person> stackOfPerson;
+
+	stackOfPerson.push(Person("AAAA", 23)); //1st element
+	stackOfPerson.push(Person("BBB", 43));  //2nd element
+	stackOfPerson.push(Person("CCC", 56));  //3rd
+	stackOfPerson.push(Person("DDDD", 67)); //4th
+	stackOfPerson.push(Person("EEEE", 78)); //5th
+
+	//Find the top element
+	Person top = stackOfPerson.top(); //5th
+	top.printSimple();
+
+	//pop one element
+	stackOfPerson.pop(); //5th gone
+	//Find the top again
+	top = stackOfPerson.top(); //4th
+
+	top.printSimple(); //4th
+}
 void mapExample()
 {
 
@@ -71,6 +239,26 @@ void mapExample()
 	person_map.insert(make_pair(1005, Person("Utsav Fasino", 55)));
 
 	printMap(person_map);
+}
+
+void setExample()
+{
+
+	cout << " ######################   Set Example " << endl;
+	set<Person> unquieList;
+
+	unquieList.insert(Person("Zeeva	advani", 44));
+	unquieList.insert(Person("Minn Zero", 23));
+	unquieList.insert(Person("LK Mishra", 24));
+	unquieList.insert(Person("Anand	advani", 43));
+	unquieList.insert(Person("Jeevan Mihg", 55));
+	unquieList.insert(Person("Zeevan advani", 33));
+
+	for (set<Person>::iterator it = unquieList.begin(); it != unquieList.end(); it++)
+	{
+		it->print();
+	
+	}
 }
 
 void listExample()
@@ -125,10 +313,8 @@ void printMap(map<int, Person> person_map)
 	for (map<int, Person>::iterator it = person_map.begin(); it != person_map.end(); it++)
 	{
 
-		cout << "\n\t\t" << it->first << " : " << flush ;
+		cout << "\n\t\t" << it->first << " : " << flush;
 		it->second.print();
-		
-
 	}
 	cout << " \n\t} " << endl;
 }

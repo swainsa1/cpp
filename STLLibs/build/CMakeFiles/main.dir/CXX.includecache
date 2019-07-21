@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/swainsa1/development/git/cpp/STLLibs/Main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+list
+-
+map
+-
+stdlib.h
+-
+set
+-
+stack
+-
+queue
+-
+
