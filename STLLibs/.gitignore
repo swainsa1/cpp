@@ -1,0 +1,6 @@
+.DS_Store
+FileExample/.DS_Store
+MyFirstCpp/a.out
+
+build/*
+.vscode/*

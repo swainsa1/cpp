@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/swainsa1/development/cpp/MyFirstCpp/MyFirstCpp.cpp
-iostream
+/Users/swainsa1/development/git/cpp/MyFirstCpp/test.cpp
+gtest/gtest.h
 -
 

@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.14.5/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/swainsa1/development/cpp/MyFirstCpp
+CMAKE_SOURCE_DIR = /Users/swainsa1/development/git/cpp/MyFirstCpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/swainsa1/development/cpp/MyFirstCpp/build
+CMAKE_BINARY_DIR = /Users/swainsa1/development/git/cpp/MyFirstCpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/swainsa1/development/cpp/MyFirstCpp/build/CMakeFiles /Users/swainsa1/development/cpp/MyFirstCpp/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/swainsa1/development/git/cpp/MyFirstCpp/build/CMakeFiles /Users/swainsa1/development/git/cpp/MyFirstCpp/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/swainsa1/development/cpp/MyFirstCpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/swainsa1/development/git/cpp/MyFirstCpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-MyFirstCpp.o: MyFirstCpp.cpp.o
+test.o: test.cpp.o
 
-.PHONY : MyFirstCpp.o
+.PHONY : test.o
 
 # target to build an object file
-MyFirstCpp.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MyFirstCpp.cpp.o
-.PHONY : MyFirstCpp.cpp.o
+test.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test.cpp.o
+.PHONY : test.cpp.o
 
-MyFirstCpp.i: MyFirstCpp.cpp.i
+test.i: test.cpp.i
 
-.PHONY : MyFirstCpp.i
+.PHONY : test.i
 
 # target to preprocess a source file
-MyFirstCpp.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MyFirstCpp.cpp.i
-.PHONY : MyFirstCpp.cpp.i
+test.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test.cpp.i
+.PHONY : test.cpp.i
 
-MyFirstCpp.s: MyFirstCpp.cpp.s
+test.s: test.cpp.s
 
-.PHONY : MyFirstCpp.s
+.PHONY : test.s
 
 # target to generate assembly for a file
-MyFirstCpp.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MyFirstCpp.cpp.s
-.PHONY : MyFirstCpp.cpp.s
+test.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... MyFirstCpp.o"
-	@echo "... MyFirstCpp.i"
-	@echo "... MyFirstCpp.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 
