@@ -4,3 +4,7 @@ MyFirstCpp/a.out
 
 build/*
 .vscode/*
+.project/*
+.settings/*
+.cproject/*
+
