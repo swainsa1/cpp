@@ -24,6 +24,12 @@ void enhancedForLoop();
 
 void functionPointer();
 
+void lambdaFunctionSimple();
+void lambdaFunctionWithParam();
+void lambdaFunctionWithPointerFunction();
+
+void lambdaFunctionWithVariables();
+
 class Person
 {
 private:
@@ -74,6 +80,14 @@ int main()
 
 	functionPointer();
 
+	lambdaFunctionSimple();
+
+	lambdaFunctionWithParam();
+
+	lambdaFunctionWithPointerFunction();
+
+	lambdaFunctionWithVariables();
+
 	return 0;
 }
 
@@ -99,7 +113,7 @@ bool size(string str, int len)
 
 int match(vector<string> &strList, int len1, bool (*aMethodRef)(string str, int len2))
 {
-	int count=0;
+	int count = 0;
 	for (auto str1 : strList)
 	{
 		if (aMethodRef(str1, len1))
@@ -116,17 +130,120 @@ void functionPointer()
 	list.push_back("one");
 	list.push_back("two");
 	list.push_back("three");
-	list.push_back("four");
+	list.push_back("1four");
 	list.push_back("five");
 	list.push_back("six");
 	list.push_back("seven");
 	list.push_back("eight");
 	list.push_back("nine");
 
-
 	cout << "3 CHAR :" << match(list, 3, size) << endl;
 	cout << "4 CHAR :" << match(list, 4, size) << endl;
 	cout << "5 CHAR :" << match(list, 5, size) << endl;
+}
 
-	
+void lambdaFunctionSimple()
+{
+	auto lFunc = []() {
+		cout << " Well a very simple lambda funtion call " << endl;
+	};
+	lFunc();
+}
+
+void lambdaFunctionWithParam()
+{
+	auto lFunc = [](int aInt, string aStr) {
+		cout << "<< " << aInt << aStr << " .. " << endl;
+	};
+	lFunc(20, "Alec Baldwin");
+}
+
+void proxyFuntion(int (*aFunctionPointer)(int, int))
+{
+	cout << aFunctionPointer(10, 20) << endl;
+}
+
+void lambdaFunctionWithPointerFunction()
+{
+
+	auto lfunc = [](int a, int b) -> int {
+		if (a > b)
+			return a;
+		else if (b > a)
+			return b;
+		else
+			return a + b;
+	};
+
+	proxyFuntion(lfunc);
+}
+
+void lambdaFunctionWithVariables()
+{
+	//pass value 
+	{
+		int var1 = 100;
+		int var2 = 200;
+		int var3 = 300;
+		//All / by value  /
+		auto lfunc = [=]() {
+			cout << "var1 = " << var1 << endl;
+			cout << "var2 = " << var2 << endl;
+			cout << "var3 = " << var3 << endl;
+			//var1 =10; wont work
+		};
+		lfunc();
+	}
+	//pass refence
+	{
+		int var1 = 100;
+		int var2 = 200;
+		int var3 = 300;
+		//All / by value  /
+		auto lfunc = [&]() {
+			var1 =var1 +1000;
+			var2 =var2 +1000;
+			var3 =var3 +1000;
+			cout << "var1 = " << var1 << endl;
+			cout << "var2 = " << var2 << endl;
+			cout << "var3 = " << var3 << endl;
+		};
+		lfunc();
+		
+	}
+
+		//Mix 1
+	{
+		int var1 = 100;
+		int var2 = 200;
+		int var3 = 300;
+		//All / by value  /
+		auto lfunc = [& ,var1]() {
+			 
+			var2 =var2 +1000;
+			var3 =var3 +1000;
+			cout << "var1 = " << var1 << endl;
+			cout << "var2 = " << var2 << endl;
+			cout << "var3 = " << var3 << endl;
+		};
+		lfunc();
+		
+	}
+
+			//Mix 2
+	{
+		int var1 = 100;
+		int var2 = 200;
+		int var3 = 300;
+		//All / by value  /
+		auto lfunc = [= ,&var1]() {
+			 
+			var1 =5000;
+			cout << "var1 = " << var1 << endl;
+			cout << "var2 = " << var2 << endl;
+			cout << "var3 = " << var3 << endl;
+		};
+		lfunc();
+		
+	}
 }
