@@ -123,32 +123,45 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-test.o: test.cpp.o
+#=============================================================================
+# Target rules for targets named doc_doxygen
 
-.PHONY : test.o
+# Build rule for target.
+doc_doxygen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 doc_doxygen
+.PHONY : doc_doxygen
+
+# fast build rule for target.
+doc_doxygen/fast:
+	$(MAKE) -f CMakeFiles/doc_doxygen.dir/build.make CMakeFiles/doc_doxygen.dir/build
+.PHONY : doc_doxygen/fast
+
+PointerExample.o: PointerExample.cpp.o
+
+.PHONY : PointerExample.o
 
 # target to build an object file
-test.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test.cpp.o
-.PHONY : test.cpp.o
+PointerExample.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/PointerExample.cpp.o
+.PHONY : PointerExample.cpp.o
 
-test.i: test.cpp.i
+PointerExample.i: PointerExample.cpp.i
 
-.PHONY : test.i
+.PHONY : PointerExample.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test.cpp.i
-.PHONY : test.cpp.i
+PointerExample.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/PointerExample.cpp.i
+.PHONY : PointerExample.cpp.i
 
-test.s: test.cpp.s
+PointerExample.s: PointerExample.cpp.s
 
-.PHONY : test.s
+.PHONY : PointerExample.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test.cpp.s
-.PHONY : test.cpp.s
+PointerExample.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/PointerExample.cpp.s
+.PHONY : PointerExample.cpp.s
 
 # Help Target
 help:
@@ -156,12 +169,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... main"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... main"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... doc_doxygen"
+	@echo "... PointerExample.o"
+	@echo "... PointerExample.i"
+	@echo "... PointerExample.s"
 .PHONY : help
 
 

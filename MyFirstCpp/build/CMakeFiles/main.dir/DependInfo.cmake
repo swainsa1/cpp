@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/swainsa1/development/git/cpp/MyFirstCpp/test.cpp" "/Users/swainsa1/development/git/cpp/MyFirstCpp/build/CMakeFiles/main.dir/test.cpp.o"
+  "/Users/swainsa1/development/git/cpp/MyFirstCpp/PointerExample.cpp" "/Users/swainsa1/development/git/cpp/MyFirstCpp/build/CMakeFiles/main.dir/PointerExample.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

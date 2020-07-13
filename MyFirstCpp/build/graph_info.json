@@ -1,0 +1,83 @@
+{
+ "profile": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Release\ncompiler=apple-clang\ncompiler.libcxx=libc++\ncompiler.version=10.0\nos=Macos\nos_build=Macos\n[options]\n[build_requires]\n[env]\n",
+ "options": [
+  [
+   "libcurl:custom_cacert",
+   "False"
+  ],
+  [
+   "libcurl:darwin_ssl",
+   "True"
+  ],
+  [
+   "libcurl:disable_threads",
+   "False"
+  ],
+  [
+   "libcurl:fPIC",
+   "True"
+  ],
+  [
+   "libcurl:shared",
+   "False"
+  ],
+  [
+   "libcurl:with_brotli",
+   "False"
+  ],
+  [
+   "libcurl:with_largemaxwritesize",
+   "False"
+  ],
+  [
+   "libcurl:with_ldap",
+   "False"
+  ],
+  [
+   "libcurl:with_libidn",
+   "False"
+  ],
+  [
+   "libcurl:with_libmetalink",
+   "False"
+  ],
+  [
+   "libcurl:with_libpsl",
+   "False"
+  ],
+  [
+   "libcurl:with_librtmp",
+   "False"
+  ],
+  [
+   "libcurl:with_libssh2",
+   "False"
+  ],
+  [
+   "libcurl:with_nghttp2",
+   "False"
+  ],
+  [
+   "libcurl:with_openssl",
+   "True"
+  ],
+  [
+   "zlib:fPIC",
+   "True"
+  ],
+  [
+   "zlib:minizip",
+   "False"
+  ],
+  [
+   "zlib:shared",
+   "False"
+  ]
+ ],
+ "root": {
+  "name": null,
+  "version": null,
+  "user": null,
+  "channel": null
+ }
+}

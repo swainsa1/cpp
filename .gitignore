@@ -8,3 +8,4 @@ build/*
 .settings/*
 .cproject/*
 
+MyFirstCpp/build/CMakeFiles/CMakeOutput.log

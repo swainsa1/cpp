@@ -6,7 +6,7 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 #include<iostream>
-#include<boost/locale.hpp>
+#include<locale.hpp>
 
 using namespace std;
 void passByValue(int value);
